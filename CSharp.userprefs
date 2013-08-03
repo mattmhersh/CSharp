@@ -1,20 +1,18 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestLibrary/Stack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSharpApp/Program.cs">
     <Files>
       <File FileName="CSharp/Test.cs" Line="7" Column="17" />
       <File FileName="TestLibrary/Person.cs" Line="3" Column="24" />
-      <File FileName="CSharpApp/Program.cs" Line="12" Column="4" />
-      <File FileName="TestLibrary/Stack.cs" Line="3" Column="24" />
+      <File FileName="CSharpApp/Program.cs" Line="21" Column="10" />
+      <File FileName="TestLibrary/Stack.cs" Line="14" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="CSharpApp" expanded="True" />
-          <Node name="CSharpLibrary" expanded="True" selected="True" />
-          <Node name="CSharpTests" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
+          <Node name="CSharpApp" expanded="True" selected="True" />
+          <Node name="CSharpLibrary" expanded="True" />
+          <Node name="CSharpTests" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
