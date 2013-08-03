@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 namespace CSharpApp
 {
+
+	enum Color {
+		Red,
+		Green,
+		Blue
+	}
+
 	class MainClass
 	{
 
@@ -31,6 +38,9 @@ namespace CSharpApp
 			l.OnAdd += new EventHandler(l_OnAdd);
 			l.Add(1);
 			l.Add(2);
+
+			// Enum
+			Console.WriteLine (Color.Red);
 
 			int k = 0;
 			while (k < 3) {
