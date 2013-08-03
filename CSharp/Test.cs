@@ -19,6 +19,18 @@ namespace CSharp
 			// Assert
 			Assert.That(name, Is.EqualTo("Matt Hersh"));
 		}
+
+		[Test]
+		public void When_getting_a_person_return_an_address()
+		{
+			// Arrange
+
+			// Act
+			var address = Person.Address ();
+
+			// Assert
+			Assert.That (address, Is.Not.Null);
+		}
 	}
 }
 

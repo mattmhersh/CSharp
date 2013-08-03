@@ -13,6 +13,11 @@ namespace CSharpLibrary
 		{
 			return "Matt Hersh";
 		}
+
+		public static object Address ()
+		{
+			return "123 Address";
+		}
 	}
 }
 
