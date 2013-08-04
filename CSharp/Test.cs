@@ -31,6 +31,21 @@ namespace CSharp
 			// Assert
 			Assert.That (address, Is.Not.Null);
 		}
+
+		[Test]
+		public void When_getting_a_car()
+		{
+			// Arrange
+			var car = new Car ();
+
+			// Act
+			car.Name = "Porsche";
+			car.Color = "Red";
+			car.Wheels = "HRE";
+
+			// Assert
+			Assert.That (car.Name, Is.Not.Null);
+		}
 	}
 }
 
