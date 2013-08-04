@@ -46,6 +46,19 @@ namespace CSharp
 			// Assert
 			Assert.That (car.Name, Is.Not.Null);
 		}
+
+		[Test]
+		public void When_checking_the_car_age()
+		{
+			// Arrange
+			var car = new Car ();
+
+			// Act
+			car.SetAge (12);
+			int age = car.MyAge();
+
+			Assert.That (age, Is.EqualTo(12));
+		}
 	}
 }
 
