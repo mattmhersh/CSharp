@@ -1,6 +1,9 @@
 using System;
 using CSharpLibrary;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CSharpApp
 {
@@ -31,6 +34,113 @@ namespace CSharpApp
 		}
 
 		public static void Main (string[] args)
+		{
+			CollectionTest ();
+
+			Console.ReadLine ();
+		}
+
+
+		private static void CollectionTest() {
+			// Array
+			var items = new Item[5];
+
+			Random r = new Random ();
+			for (int i = 0; i < items.Length; i++)
+			{
+				items [i] = new Item (r.Next (0, 10));
+			}
+
+			Console.WriteLine ("Items: ");
+			foreach(Item itm in items) {
+				Console.WriteLine ("Item: {0} ", itm.ID);
+			}
+
+			Item myItem = items [2];
+			Console.WriteLine ("Item #2: {0}", myItem.ID);
+
+			var authors = new Author[4];
+			authors [0] = new Author () { Name = "Alie" };
+			authors [1] = new Author () { Name = "Matt" };
+			authors [2] = new Author () { Name = "John" };
+			authors [3] = new Author () { Name = "Sam" };
+
+			foreach(Author author in authors) {
+				Console.WriteLine ("Author: {0}", author.Name);
+			}
+
+			String[] myArr = { "The", "QUICK", "BROWN", "FOX", "jumps", "over", "the", "lazy", "dog" };
+
+			Array.Sort(myArr);
+
+			foreach(string value in myArr) {
+				Console.WriteLine("Value: {0}", value);
+			}
+
+			// List
+			var myList = new List<Item>();
+			myList.Add(new Item(10));
+			myList.Add(new Item(20));
+			myList.Add(new Item(30));
+			foreach(var itm in myList) {
+				Console.WriteLine("List Item: {0}", itm.ID);
+			}
+
+			Console.WriteLine("Queue");
+
+			// Queue
+			var myQueue = new Queue<int>();
+			myQueue.Enqueue(10);
+			int val = myQueue.Dequeue();
+			Console.WriteLine("val: {0}", val);
+
+			for(int i = 0; i < 50; i++) {
+				myQueue.Enqueue(i);
+			}
+
+			foreach( int i in myQueue) {
+				Console.WriteLine("{0}, ", i);
+			}
+
+			Console.WriteLine("Stack");
+
+			// Stack
+			var myStack = new Stack<int>();
+			myStack.Push(10);
+			int valb = myStack.Pop();
+			Console.WriteLine("val: {0}", valb);
+
+			for(int i = 0; i < 50; i++) {
+				myStack.Push(i);
+			}
+
+			foreach( int i in myStack) {
+				Console.WriteLine("{0}, ", i);
+			}
+
+			Console.WriteLine("Dictionary");
+
+			// Dictionary
+			Dictionary<string, string> capitals = new Dictionary<string, string>();
+			capitals.Add("Alabama", "Montgomery");
+			capitals.Add("Alaska", "Juneau");
+			capitals.Add("Arizona", "Pheonix");
+			capitals.Add("Massachusetts", "Boston");
+			capitals.Add("Wyoming", "Cheyenne");
+
+			foreach(var dic in capitals) {
+				Console.WriteLine("State: {0} - Capital: {1}", dic.Key, dic.Value);
+			}
+		}
+
+		void OOPTest()
+		{
+			var car = new Car ();
+			car.Name = "Ferrari";
+			car.Purchase ();
+		}
+
+		void ForTest()
 		{
 			Console.Write ("How old are you? ");
 			int age = int.Parse (Console.ReadLine ());
@@ -73,8 +183,6 @@ namespace CSharpApp
 			Console.WriteLine (k++);
 			Console.WriteLine (k);
 			Console.WriteLine (++k);
-
-			Console.ReadLine ();
 		}
 
 		void Test()

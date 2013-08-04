@@ -1,6 +1,7 @@
 using System;
 using NUnit.Framework;
 using CSharpLibrary;
+using System.Diagnostics;
 
 namespace CSharp
 {
@@ -57,7 +58,26 @@ namespace CSharp
 			car.SetAge (12);
 			int age = car.MyAge();
 
-			Assert.That (age, Is.EqualTo(12));
+			Assert.That (age, Is.EqualTo(14));
+		}
+
+		[Test]
+		public void When_testing_an_Employee()
+		{
+			// Arrange
+			var employee = new Employee () {
+				Age = 21,
+				Name = "Matt H",
+				Salary = 100000,
+				PhoneNumber = "8885551234",
+				StartingDate = DateTime.Now.AddYears(-5)
+			};
+
+			Debug.WriteLine(employee.StartingDate.ToShortDateString());
+
+			// Assert
+			Assert.That (employee.Name, Is.Not.Null);
+
 		}
 	}
 }

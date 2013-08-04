@@ -15,7 +15,18 @@ namespace CSharpLibrary
 
 		public void SetAge(int someAge)
 		{
-			age = someAge;
+			age = UpdateAge(someAge);
+		}
+
+		private int UpdateAge(int someAge)
+		{
+			return someAge + 2;
+		}
+
+		public override void Purchase ()
+		{
+			base.Purchase ();
+			Console.WriteLine ("I have been Purchased");
 		}
 	}
 }
