@@ -32,7 +32,53 @@ namespace CSharpApp
 
 		public static void Main (string[] args)
 		{
+			Console.Write ("How old are you? ");
+			int age = int.Parse (Console.ReadLine ());
 
+			switch (age) {
+				case 1:
+				Console.WriteLine ("Happy First Birthday! ");
+				break;
+				case 2:
+				Console.WriteLine ("Happy 2nd Birthday! ");
+				break;
+				default:
+				Console.WriteLine("Happy {0} Birthday! ", age);
+				break;
+			}
+
+			int do_age = age;
+			int for_age = age;
+
+			do { 
+				Console.WriteLine ("Hello Do"); 
+				do_age--;
+			}
+			while (do_age > 0);
+
+			while (age > 0)
+			{
+				Console.WriteLine ("Happy Birthday ");
+				age--;
+			}
+
+			for (int i = 0; i < for_age; i++)
+			{
+				Console.WriteLine ("For Loop Happy Birthday ");
+			}
+
+			Console.WriteLine ("\nTaDa");
+
+			int k = 12;
+			Console.WriteLine (k++);
+			Console.WriteLine (k);
+			Console.WriteLine (++k);
+
+			Console.ReadLine ();
+		}
+
+		void Test()
+		{
 			// Events
 			MyList<int> l = new MyList<int>();
 			l.OnAdd += new EventHandler(l_OnAdd);
@@ -52,8 +98,8 @@ namespace CSharpApp
 			const int r = 25; 
 			Console.WriteLine(pi * r * r);
 
-			byte b = 10;
-			Console.WriteLine (b);
+			byte byt = 10;
+			Console.WriteLine (byt);
 
 			int i = 123;
 			object o = i; // Boxing 
@@ -69,9 +115,21 @@ namespace CSharpApp
 
 			Console.WriteLine(s.Pop()); 
 			Console.WriteLine(s.Pop()); 
-			Console.WriteLine(s.Pop());		
+			Console.WriteLine(s.Pop());	
 
-			Console.ReadLine ();
+			int number1 = 12;
+			double number2 = 13.2;
+
+			double sum = number1 + number2;
+
+			int a = 2;
+			int b = 3;
+			int c = 5;
+
+			bool result1 = a + b == c;
+			Console.WriteLine(result1);
+
+			Console.WriteLine (sum);
 		}
 	}
 }
