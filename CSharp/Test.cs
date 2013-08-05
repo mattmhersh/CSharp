@@ -65,7 +65,7 @@ namespace CSharp
 		public void When_testing_an_Employee()
 		{
 			// Arrange
-			var employee = new Employee () {
+			var employee = new Employer () {
 				Age = 21,
 				Name = "Matt H",
 				Salary = 100000,

@@ -17,6 +17,55 @@ namespace CSharpApp
 	class MainClass
 	{
 
+		public static void Main (string[] args)
+		{
+			//CollectionTest ();
+
+			//AbstractClassExample ();
+
+			//DelegateExample ();
+
+			Console.ReadLine ();
+		}
+
+		public static void DelegateExample() {
+			var tester = new MediaTester ();
+			var mp3 = new MP3Player ();
+			var mp4 = new MP4Player ();
+
+			var mp3Delegate = new MediaTester.TestMedia (mp3.PlayMP3File);
+			var mp4Delegate = new MediaTester.TestMedia (mp4.PlayMP4File);
+
+			tester.RunTest (mp3Delegate);
+			tester.RunTest (mp4Delegate);		
+		}
+
+		public static void AbstractClassExample()
+		{
+			var emp1 = new Worker ();
+			emp1.Name = "David";
+			emp1.Salary = 50000;
+
+			var emp2 = new Manager();
+			emp2.Name = "Rachel";
+			emp2.Salary = 100000;
+
+			var emp3 = new Manager ();
+			emp3.Name = "Zach";
+			emp3.Salary = 120000;
+
+			var employees = new List<Employee> ();
+			employees.Add(emp1);
+			employees.Add(emp2);
+			employees.Add(emp3);
+
+			foreach (var emp in employees) {
+				Console.Write ("{0}'s salary was {1}", emp.Name, emp.Salary);
+				emp.GiveRaise ();
+				Console.WriteLine (" but is now {0}", emp.Salary);
+			}
+		}
+
 		class MyList<T> : List<T> {
 
 			public event EventHandler OnAdd;
@@ -32,14 +81,6 @@ namespace CSharpApp
 		static void l_OnAdd(object sender, EventArgs e) {
 			Console.WriteLine("Element added...");
 		}
-
-		public static void Main (string[] args)
-		{
-			CollectionTest ();
-
-			Console.ReadLine ();
-		}
-
 
 		private static void CollectionTest() {
 			// Array

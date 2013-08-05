@@ -37,10 +37,16 @@
     <Compile Include="Stack.cs" />
     <Compile Include="Toy.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="Employee.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="IAppliance.cs" />
     <Compile Include="Refrigerator.cs" />
+    <Compile Include="Employer.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Worker.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="MediaTester.cs" />
+    <Compile Include="MP3Player.cs" />
+    <Compile Include="MP4Player.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

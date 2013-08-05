@@ -2,14 +2,18 @@ using System;
 
 namespace CSharpLibrary
 {
-	public class Employee
+	public abstract class Employee
 	{
-		public int Age { get; set; }
 		public string Name { get; set; }
 		public double Salary { get; set; }
-		public DateTime StartingDate { get; set; }
-		public string PhoneNumber { get; set; }
+		private DateTime HireDate;
 
+		public virtual void Hire()
+		{
+			HireDate = DateTime.Now;
+		}
+
+		public abstract void GiveRaise();
 	}
 }
 
