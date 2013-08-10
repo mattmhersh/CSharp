@@ -2,6 +2,7 @@ using System;
 using NUnit.Framework;
 using CSharpLibrary;
 using System.Diagnostics;
+using FakeItEasy;
 
 namespace CSharp
 {
@@ -78,6 +79,87 @@ namespace CSharp
 			// Assert
 			Assert.That (employee.Name, Is.Not.Null);
 
+		}
+
+		[Test]
+		public void When_testing_fakes() {
+
+			// Creating a fake object is just dead easy!
+			// No mocks, no stubs, everything's a fake!
+			var appliance = A.Fake<IAppliance>();
+
+
+			// To set up a call to return a value is also simple:
+			A.CallTo (() => appliance.On ()).MustNotHaveHappened ();
+
+		}
+
+		[Test]
+		public void When_a_dog_barks() {
+			// Arrange
+
+			var dog = A.Fake<Animal> ();
+
+			// Assert
+			A.CallTo (() => dog.PerformTrick ()).CallsBaseMethod ();
+		}
+
+		[Test]
+		public void When_a_real_dog_barks() {
+			// Arrange
+			var dog = new Dog ();
+
+
+			// Act
+			dog.PerformTrick ();
+
+			// Assert
+
+		}
+
+		[Test]
+		public void When_using_a_complex_object()
+		{
+			// Arrange
+			var complex = new Complex ();
+			complex.Imaginary = 9;
+			complex.Real = 8;
+
+			// Act
+			complex.Real += 2;
+
+			// Assert
+			Assert.That(complex.Real, Is.EqualTo(10));
+
+		}
+
+		[Test]
+		public void IdentityTest()
+		{
+			Invoice firstInvoice = new Invoice ();
+			firstInvoice.ID = 1;
+			firstInvoice.Description = "Test";
+			firstInvoice.Amount = 0.0M;
+
+			Invoice secondInvoice = new Invoice ();
+			secondInvoice.ID = 1;
+			secondInvoice.Description = "Test";
+			secondInvoice.Amount = 0.0M;
+
+			Assert.IsFalse (object.ReferenceEquals (secondInvoice, firstInvoice));
+			Assert.IsTrue (firstInvoice.ID == 1);
+
+			secondInvoice.ID = 2;
+
+			Assert.IsTrue (secondInvoice.ID == 2);
+			Assert.IsTrue (firstInvoice.ID == 1);
+
+			secondInvoice = firstInvoice;
+
+			Assert.IsTrue(object.ReferenceEquals(secondInvoice, firstInvoice));
+
+			secondInvoice.ID = 5;
+			Assert.IsTrue (firstInvoice.ID == 5);
 		}
 	}
 }

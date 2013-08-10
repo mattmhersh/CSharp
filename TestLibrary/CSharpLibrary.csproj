@@ -47,6 +47,10 @@
     <Compile Include="MediaTester.cs" />
     <Compile Include="MP3Player.cs" />
     <Compile Include="MP4Player.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Dog.cs" />
+    <Compile Include="Complex.cs" />
+    <Compile Include="Invoice.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

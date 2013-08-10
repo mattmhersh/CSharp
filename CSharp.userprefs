@@ -1,21 +1,23 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestLibrary/Refrigerator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSharp/Test.cs">
     <Files>
-      <File FileName="TestLibrary/Car.cs" Line="1" Column="1" />
-      <File FileName="TestLibrary/Toy.cs" Line="1" Column="1" />
-      <File FileName="CSharpApp/Program.cs" Line="132" Column="72" />
-      <File FileName="TestLibrary/IAppliance.cs" Line="9" Column="17" />
-      <File FileName="TestLibrary/Refrigerator.cs" Line="18" Column="3" />
+      <File FileName="CSharp/Test.cs" Line="146" Column="39" />
+      <File FileName="TestLibrary/IAppliance.cs" Line="1" Column="1" />
+      <File FileName="TestLibrary/Animal.cs" Line="9" Column="31" />
+      <File FileName="TestLibrary/Dog.cs" Line="13" Column="17" />
+      <File FileName="TestLibrary/Complex.cs" Line="9" Column="3" />
+      <File FileName="TestLibrary/Invoice.cs" Line="9" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CSharpApp" expanded="True" />
-          <Node name="CSharpLibrary" expanded="True">
-            <Node name="Refrigerator.cs" selected="True" />
+          <Node name="CSharpLibrary" expanded="True" />
+          <Node name="CSharpTests" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Test.cs" selected="True" />
           </Node>
-          <Node name="CSharpTests" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
