@@ -1,23 +1,19 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CSharp/Test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSharpApp/Program.cs">
     <Files>
-      <File FileName="CSharp/Test.cs" Line="146" Column="39" />
-      <File FileName="TestLibrary/IAppliance.cs" Line="1" Column="1" />
-      <File FileName="TestLibrary/Animal.cs" Line="1" Column="1" />
-      <File FileName="TestLibrary/Dog.cs" Line="1" Column="1" />
-      <File FileName="TestLibrary/Complex.cs" Line="1" Column="1" />
-      <File FileName="TestLibrary/Invoice.cs" Line="1" Column="1" />
+      <File FileName="TestLibrary/DebugWindowLogger.cs" Line="2" Column="26" />
+      <File FileName="TestLibrary/BetterDebugWindowLogger.cs" Line="9" Column="3" />
+      <File FileName="CSharpApp/Program.cs" Line="35" Column="3" />
+      <File FileName="TestLibrary/MyExtensions.cs" Line="15" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="CSharpApp" expanded="True" />
-          <Node name="CSharpLibrary" expanded="True" />
-          <Node name="CSharpTests" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Test.cs" selected="True" />
+          <Node name="CSharpApp" expanded="True">
+            <Node name="Program.cs" selected="True" />
           </Node>
+          <Node name="CSharpLibrary" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -26,11 +22,11 @@
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
       </Pad>
-      <Pad Id="ConnectionManagerPad">
-        <State selected="True" />
-      </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Threading;
+using System.Reflection.Emit;
 
 namespace CSharpApp
 {
@@ -35,9 +36,20 @@ namespace CSharpApp
 
 			//JumpingExample();
 
-			DownloadAsynchronously();
+			//DownloadAsynchronously();
+
+			//ILGenerator il = MethodAccessException.GetILGenerator();
 
 			Console.ReadLine ();
+		}
+
+		private static void ReflectionExample() {
+			var type = typeof(Car);
+			var members = type.GetMembers();
+
+			foreach (var member in members) {
+				Console.WriteLine (member.GetType ());
+			}
 		}
 
 		private static void DownloadAsynchronously() {
