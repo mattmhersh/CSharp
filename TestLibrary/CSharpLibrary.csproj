@@ -51,6 +51,9 @@
     <Compile Include="Dog.cs" />
     <Compile Include="Complex.cs" />
     <Compile Include="Invoice.cs" />
+    <Compile Include="DebugWindowLogger.cs" />
+    <Compile Include="BetterDebugWindowLogger.cs" />
+    <Compile Include="MyExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

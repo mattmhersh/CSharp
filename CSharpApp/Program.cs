@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Threading;
 
 namespace CSharpApp
 {
@@ -13,6 +15,8 @@ namespace CSharpApp
 		Green,
 		Blue
 	}
+
+	public delegate void WriteMessage(string message);
 
 	class MainClass
 	{
@@ -25,7 +29,94 @@ namespace CSharpApp
 
 			//DelegateExample ();
 
+			//AnotherDelegateExample();
+
+			//ExtensionMethodExample();
+
+			//JumpingExample();
+
+			DownloadAsynchronously();
+
 			Console.ReadLine ();
+		}
+
+		private static void DownloadAsynchronously() {
+			string[] urls = {
+				"http://www.pluralsight-training.net/microsoft",
+				"http://www.google.com",
+				"http://www.news.com"
+			};
+
+			foreach (var url in urls) {
+				Download (url);
+			}
+		}
+
+		private static void Download(string url) {
+			var client = new WebClient();
+
+			client.DownloadDataCompleted += (object sender, DownloadDataCompletedEventArgs e) => {
+				var html = e.Result;
+				var myurl = e.UserState.ToString();
+				DebugWindowLogger log1 = new DebugWindowLogger();
+				log1.SendMessage(String.Format("Downloaded: {0} - URL: {1}", html, myurl));
+			};
+			client.DownloadStringAsync(new Uri(url), url);
+
+			//var html = client.DownloadString (url);
+			//Console.WriteLine("Download {0} chars fro {1} on thread {2}", html.Length, url, Thread.CurrentThread.ManagedThreadId);
+		}
+
+		public static void JumpingExample() {
+			var array = new int[6]{ 0, 1, 2, 3, 4, 5};
+			foreach( int i in array)
+			{
+				if (i == 2) {
+					goto skip;
+				}
+
+				if (i == 3) {
+					continue;
+				}
+
+				if (i == 4) {
+					break;
+				}
+
+				Console.WriteLine (i);
+					
+			}
+
+		skip :
+				Console.WriteLine("skipped");
+		}
+
+		public static void BranchingExample() { 
+			int age = 10;
+			string pass = age > 20 ? "Minor" : "Adult";
+			Console.WriteLine ("The person is a {0}", pass);		
+		}
+
+		public static void ExtensionMethodExample() {
+			string s = "Hello Extension Methods";
+			int i = s.WordCount();
+			string firstLetter = s.FirstLetter();
+			Console.WriteLine ( "First Letter: {0}", firstLetter);
+			Console.WriteLine ("Word Count: {0}", i);		
+		}
+
+		public static void AnotherDelegateExample() {
+			DebugWindowLogger log1 = new DebugWindowLogger();
+			BetterDebugWindowLogger log2 = new BetterDebugWindowLogger ();
+
+			//var _writer = new WriteMessage(log1.SendMessage);
+
+			WriteMessage _writer = new WriteMessage(log1.SendMessage);
+			_writer += log1.SendMessage;
+			_writer += log2.SendMessage;
+			_writer += log1.SendMessage;
+
+			_writer("Doing some work");		
 		}
 
 		public static void DelegateExample() {
